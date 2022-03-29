@@ -2,6 +2,7 @@ body{
     margin-top: 0;
     padding: 0;
     background: linear-gradient(to right,rgb(237, 64, 104),rgb(36, 143, 36),rgb(187, 68, 235),rgb(64, 142, 237),rgb(237, 64, 104));
+    background-image: linear-gradient(to left, rgb(54, 56, 68), rgb(86, 77, 102));
 }
 h1{
     font-size: 3em;
