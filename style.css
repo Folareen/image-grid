@@ -1,7 +1,6 @@
 body{
     margin-top: 0;
     padding: 0;
-    background: linear-gradient(to right,rgb(237, 64, 104),rgb(36, 143, 36),rgb(187, 68, 235),rgb(64, 142, 237),rgb(237, 64, 104));
     background-image: linear-gradient(to left, rgb(54, 56, 68), rgb(86, 77, 102));
 }
 h1{
@@ -51,11 +50,24 @@ h1{
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
     position: relative;
     box-sizing: border-box;
+    /* pointer-events: unset; */
+    z-index: 1;
 }
 .container > div button{
     position: absolute;
-    display: none;
+    z-index: 2;
+    /* display: none; */
+    visibility: hidden;
+    border: 1px solid rgb(4, 4, 44);
+    color: white;
+    background-color: rgb(54, 56, 68);
+    padding: 10px;
+    cursor: pointer;
     transition: all 2s;
+}
+.container > div:hover button{
+    /* display: block; */
+    visibility: visible;
 }
 
 .container{
@@ -68,17 +80,15 @@ h1{
 }
 .container > div:hover{
     transform: scale(1.02);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
-.container > div:hover button{
-    display: block;
-}
+
 .container > div:hover::after{
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .3);
 }
 
 
@@ -100,5 +110,35 @@ div > img{
     grid-row: span 2;
     grid-column: span 2;
 }
-.big button{
+.display{
+    overflow: scroll;
+    max-width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid red;
+    /* visibility: hidden; */
+}
+.display .display-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 4;
+    padding: 10px;
+    color: red;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bolder;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
 }
