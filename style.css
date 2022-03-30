@@ -120,8 +120,7 @@ div > img{
     bottom: 0;
     left: 0;
     right: 0;
-    border: 1px solid red;
-    /* visibility: hidden; */
+    background-color: rgba(0, 0, 0, .9);
 }
 .display .display-image{
     width: 100%;
