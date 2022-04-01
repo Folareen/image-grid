@@ -1,40 +1,36 @@
-
-
-// display images
 const BUTTON = document.querySelectorAll('button');
-const BODY = document.querySelector('body');
-// const FILTER = document.querySelector('select');
-// const OPTION = document.querySelector('option')
-
-// FILTER.addEventListener('change', filterfunc );
-
-// function well(){
-//     alert('it works!!')
-// }
-
-// function filterfunc(){
-    // console.log(FILTER);
-    // let filterValue = FILTER.V
-    // console.log(OPTION.)
-    // filter.forEach(a => console.log(a.value)); 
-// }
-// filter.forEach(option => {
-//     switch (option){
-//         case "landscape":
-//             console.log(option);
-//     }
-// }); 
+const BODY = document.querySelector('body'); const FILTER = document.querySelector('select');
+const OPTION = document.querySelector('option');
+const IMG = document.querySelectorAll('img');
 
 
-BUTTON.forEach(each => each.addEventListener('click', displayImage))
+FILTER.addEventListener('change', filterfunc );
+BUTTON.forEach(each => each.addEventListener('click', displayImage));
 
-
+function filterfunc(){
+    let filterValue = event.target.value;
+    console.log(filterValue);
+    IMG.forEach(each => {
+        if(filterValue === "All"){
+            each.parentElement.style.display = "flex";
+        }
+        else{
+            if(each.src.includes(filterValue.toLowerCase())){
+                each.parentElement.style.display = "flex";
+            }
+            else{
+                each.parentElement.style.display = "none";
+            }
+        }
+    });
+}
 function displayImage(){
     let imageContainer = document.createElement('div');
     imageContainer.classList.add('display');
-    const imageSrc = this.parentElement.firstElementChild.src;
+    const button = event.target;
+    const imageSrc = button.parentElement.firstElementChild.src;
     let image = document.createElement('img');
-    image.src = imageSrc
+    image.src = imageSrc;
     image.classList.add('display-image');
     imageContainer.appendChild(image)
     let closeButton = document.createElement('button');
@@ -45,7 +41,5 @@ function displayImage(){
     closeButton.addEventListener('click', closeImage);
     function closeImage(){
         this.parentElement.remove();
-        console.log(this.parentElement);
-        console.log(image)
     }
 }
