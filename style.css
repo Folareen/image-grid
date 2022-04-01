@@ -50,13 +50,11 @@ h1{
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
     position: relative;
     box-sizing: border-box;
-    /* pointer-events: unset; */
     z-index: 1;
 }
 .container > div button{
     position: absolute;
     z-index: 2;
-    /* display: none; */
     visibility: hidden;
     border: 1px solid rgb(4, 4, 44);
     color: white;
@@ -66,7 +64,6 @@ h1{
     transition: all 2s;
 }
 .container > div:hover button{
-    /* display: block; */
     visibility: visible;
 }
 
@@ -80,7 +77,6 @@ h1{
 }
 .container > div:hover{
     transform: scale(1.02);
-    /* cursor: pointer; */
 }
 
 .container > div:hover::after{
