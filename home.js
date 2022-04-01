@@ -9,7 +9,6 @@ BUTTON.forEach(each => each.addEventListener('click', displayImage));
 
 function filterfunc(){
     let filterValue = event.target.value;
-    console.log(filterValue);
     IMG.forEach(each => {
         if(filterValue === "All"){
             each.parentElement.style.display = "flex";
